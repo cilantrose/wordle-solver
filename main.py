@@ -107,12 +107,7 @@ def radixSort(in_list: list[tuple], sort_index, high_low=True):
     for i in range(0, max_digits):
         # messy bucket init because i think it's faster due to presorted buckets
         # don't quote me on that though, maybe the object creation has more overhead in python
-        # wtf did pycharm do to my formatting lmao
-        buckets = {9: [], 8: [], 7: [], 6: [], 5: [], 4: [], 3: [], 2: [], 1: [], 0: []} if high_low else {0: [], 1: [],
-                                                                                                           2: [], 3: [],
-                                                                                                           4: [], 5: [],
-                                                                                                           6: [], 7: [],
-                                                                                                           8: [], 9: []}
+        buckets = {9: [], 8: [], 7: [], 6: [], 5: [], 4: [], 3: [], 2: [], 1: [], 0: []} if high_low else {0: [], 1: [],2: [], 3: [],4: [], 5: [],6: [], 7: [],8: [], 9: []}
         for item in in_list:
             # get rightmost unchecked digit and appends to appropriate bucket
             buckets[item[0] // 10 ** i % 10].append(item)
